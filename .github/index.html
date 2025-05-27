@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>موقع حمزة الشخصي</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+    section {
+      margin-bottom: 40px;
+      background: white;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form input, form button {
+      padding: 10px;
+      margin-top: 8px;
+      font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    form button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>مرحباً، أنا حمزة محمود كمال</h1>
+  <p>طالب ومبرمج ويب مبتدئ</p>
+</header>
+
+<main>
+  <section id="about">
+    <h2>نبذة عني</h2>
+    <p>أنا طالب في الصف الأول الثانوي، أحب تعلم برمجة الويب وأسعى لتطوير نفسي في مجال التقنية.</p>
+  </section>
+
+  <section id="projects">
+    <h2>مشاريعي</h2>
+    <ul>
+      <li>مشروع موقع تعليمي بسيط</li>
+      <li>تطبيق ويب لجمع الملاحظات</li>
+      <li>موقع شخصي يعرض سيرتي الذاتية</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>تواصل معي</h2>
+    <form id="contactForm">
+      <input type="text" id="name" name="name" placeholder="اسمك" required />
+      <input type="email" id="email" name="email" placeholder="بريدك الإلكتروني" required />
+      <button type="submit">إرسال</button>
+    </form>
+    <p id="formMessage" style="color: green; margin-top: 10px;"></p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 حمزة محمود كمال
+</footer>
+
+<script>
+  // نموذج بسيط يعرض رسالة تأكيد فقط (مش بيحفظ بيانات حقيقية لحد ما تربطه بقاعدة بيانات)
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = this.name.value.trim();
+    const email = this.email.value.trim();
+
+    if(name && email) {
+      document.getElementById('formMessage').textContent = `شكرًا لك، ${name}! تم استلام طلبك.`;
+      this.reset();
+    } else {
+      document.getElementById('formMessage').textContent = 'يرجى تعبئة جميع الحقول.';
+    }
+  });
+</script>
+
+</body>
+</html>
